@@ -1,0 +1,28 @@
+{
+  "name": "has-callback",
+  "version": "0.0.0",
+  "description": "Check if function takes callback as argument",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "coffee -o lib -c src/*.coffee",
+    "test": "mocha --compilers coffee:coffee-script/register test/*.coffee",
+    "test:watch": "npm run test -s -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohanorton/hasCallback.git"
+  },
+  "author": "Rohan Orton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rohanorton/hasCallback/issues"
+  },
+  "homepage": "https://github.com/rohanorton/hasCallback#readme",
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "get-parameter-names": "^0.2.0"
+  }
+}
