@@ -9,8 +9,26 @@ Will check for common callback names in argument footprint:
 - done
 - next
 
-Usage
------
+API
+---
+
+### `hasCallback(fn, [userDefinedNames])`
+
+#### fn
+Type: function
+
+_(Required)_
+
+The function to be tested.
+
+#### userDefinedNames
+Type: string | array
+
+User-defined callback name string or list of strings.
+
+
+Example Usage
+-------------
 
 ```js
 import hasCallback from 'has-callback';
