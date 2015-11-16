@@ -1,9 +1,19 @@
 getParameterNames = require 'get-parameter-names'
+arg = require 'arg-err'
 
-hasCallback = (fn) ->
-    throw new Error('Requires argument') unless fn?
-    throw new TypeError('Argument must be function') unless typeof fn is 'function'
+validateArgs = (fn, userDefinedNames) ->
+    args = { fn: fn, userDefinedNames: userDefinedNames }
+    err = arg.err(args, {
+        fn: 'function',
+        userDefinedNames: ['string', 'array']
+    })
+    err? && throw err
+
+hasCallback = (fn, userDefinedNames = []) ->
+    validateArgs(fn, userDefinedNames)
     args = getParameterNames(fn)
-    /callback|cb|done|next/.test(args)
+    callbackNames = [ 'callback', 'cb', 'done', 'next', userDefinedNames... ]
+    re = new RegExp(callbackNames.join('|'))
+    re.test(args)
 
 module.exports = hasCallback

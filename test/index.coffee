@@ -52,3 +52,16 @@ describe 'hasCallback', ->
         expected = true
         actual = hasCallback(fn)
         assert.equal(actual, expected)
+
+    it 'takes optional argument of array containing user-defined callback names', ->
+        fn = (callbk) -> callbk()
+        expected = true
+        actual = hasCallback(fn, ['clbk', 'callbk'])
+        assert.equal(actual, expected)
+
+    it 'takes optional argument of user-defined callback name', ->
+        fn = (callbk) -> callbk()
+        expected = true
+        actual = hasCallback(fn, 'callbk')
+        assert.equal(actual, expected)
+

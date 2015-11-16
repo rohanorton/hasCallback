@@ -23,6 +23,7 @@
     "mocha": "^2.3.3"
   },
   "dependencies": {
+    "arg-err": "^0.1.0",
     "get-parameter-names": "^0.2.0"
   }
 }
