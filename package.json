@@ -1,6 +1,6 @@
 {
   "name": "has-callback",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Check if function takes callback as argument",
   "main": "lib/index.js",
   "scripts": {
